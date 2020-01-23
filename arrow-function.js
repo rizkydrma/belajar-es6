@@ -20,3 +20,28 @@ let potongHuruf = mahasiswa.sort().map(nama => ({
     jumlahHuruf: nama.length
 }));
 console.log(potongHuruf);
+
+// Constructor Function
+// tidak dapat di ubah menjadi arrow function tetapi method
+// didalam constructor function bisa di ubah
+
+const Mahasiswa = function (nama = "Nama kosong",umur = "Nim kosong") {
+    this.nama = nama;
+    this.umur = umur;
+    // ARROW FUNCTION
+    this.cetak = () => {
+        return `Nama : ${this.nama}, NIM : ${this.umur}`;
+    }
+    
+    let tambahUmur = setInterval(()=>{
+        this.umur++;
+        console.log(this.cetak());
+        (this.umur == 60) ? clearInterval(tambahUmur) : null ;
+    },500);
+    
+
+    // FUNCTION DECLARATION BIASA KENA HOISTING JADI THIS MENCARI DI GLOBAL SCOPE 
+    // SEDANGKAN ARROW FUNCTION MENCARI DI LEXICAL SCOPE
+}
+const mhs1 = new Mahasiswa('Rizky Darma','20');
+console.log(mhs1.cetak());
