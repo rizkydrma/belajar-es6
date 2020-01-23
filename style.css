@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.circle{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid #a90912;
+    margin: 25px auto;
+    transition: .3s width,
+                .3s heigh .3s,
+                .3s margin-top .3s,
+                1s background-color;
+                
+}
+
+.size{
+    width: 200px;
+    height: 200px;
+    margin-top: 25px;
+}
+
+.caption{
+    background-color: #a90912;
+}
