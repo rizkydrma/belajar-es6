@@ -7,8 +7,8 @@ cetakTugas = (matakuliah, selesai) =>{
     console.log(`Mulai mengerjakan tugas ${matakuliah}..`);
     selesai();
 }
-selesai = () =>{
-    alert('Selesai Mengerjakan Tugas!');
+selesai =()=>{
+    console.log('Selesai Mengerjakan Tugas!');
 }
 
-cetakTugas('Web II',cetakTugas('VB',selesai));
+cetakTugas('Web II',selesai);
