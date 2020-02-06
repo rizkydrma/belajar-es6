@@ -2,8 +2,9 @@ const btnSearch = document.querySelector('.btn-search')
 btnSearch.addEventListener('click', function(){
   const searchMovie = document.querySelector('.search-movie').value
   $.ajax({
-    url: 'http://www.omdbapi.com/?apikey=[key-api]&s=' + searchMovie,
+    url: 'http://www.omdbapi.com/?apikey=c58f5023&s=' + searchMovie,
     success: result => {
+      console.log(result)
       const movies = result.Search
       const moviesCards = document.querySelector('.movie-cards')
       let cards = ''
@@ -16,7 +17,7 @@ btnSearch.addEventListener('click', function(){
       elements.forEach(element => {
         element.addEventListener('click', function(){
           $.ajax({
-            url: 'http://www.omdbapi.com/?apikey=[key-api]&i=' + this.getAttribute('data-id'),
+            url: 'http://www.omdbapi.com/?apikey=c58f5023&i=' + this.getAttribute('data-id'),
             success: movie => {
               const movieDetail = showDetailMovie(movie)
               const modalBody = document.querySelector('.modal-body')
